@@ -1,0 +1,30 @@
+version: '3.7'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  accounts-db:
+    image: mysql:8.0.16
+    container_name: accounts-db
+    restart: always
+    networks:
+      - app-tier
+    environment:
+      MYSQL_ROOT_USERNAME: root
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: accounts-db
+    ports:
+      - "8001:5432"
+
+  dashboard:
+    image: sreeise/dashboard:login-0.1.0
+    container_name: dashboard
+    restart: always
+    networks:
+      - app-tier
+    ports:
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
