@@ -23,7 +23,7 @@ public class ServiceListener implements VaadinServiceInitListener {
   }
 
   /**
-   * Reroutes the user if they is not authorized to access the view.
+   * Reroutes the user if they are not authorized to access the view.
    *
    * @param event before navigation event with event details
    */
