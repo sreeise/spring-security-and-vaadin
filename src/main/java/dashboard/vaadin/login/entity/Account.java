@@ -20,7 +20,8 @@ public class Account extends AbstractEntity {
   @Column(nullable = false)
   private String accountStatus;
 
-  public Account() {}
+  public Account() {
+  }
 
   public Account(String email, String password, AccountRole role, AccountStatus status) {
     super();

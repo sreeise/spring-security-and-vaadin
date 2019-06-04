@@ -21,12 +21,7 @@ public class SecurityAccess {
   public static Optional<String> getEmail() {
     Authentication userAuthentication = SecurityContextHolder.getContext().getAuthentication();
     Optional<UserAccount> user = Optional.ofNullable((UserAccount) userAuthentication.getPrincipal());
-    user.ifPresent(value -> System.setProperty("currentUser", value.getUsername()));
     return user.map(userAccount -> Optional.ofNullable(userAccount.getEmail())).orElse(null);
-  }
-
-  public static Optional<String> getEmailFromProperty() {
-    return Optional.ofNullable(System.getProperty("currentUser"));
   }
 
   /**

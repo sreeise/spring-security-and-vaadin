@@ -9,6 +9,8 @@ import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 @Tag("sa-logout-view")
@@ -16,6 +18,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @PageTitle("logout")
 public class LogoutView extends FlexLayout {
   static final String ROUTE = "logout";
+  protected final Log logger = LogFactory.getLog(LogoutView.class);
   private Dialog dialog = new Dialog();
 
   /**

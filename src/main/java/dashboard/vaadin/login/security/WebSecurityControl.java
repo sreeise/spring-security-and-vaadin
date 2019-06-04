@@ -14,6 +14,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 
 import java.util.Optional;
 
@@ -82,7 +83,7 @@ public class WebSecurityControl extends WebSecurityConfigurerAdapter {
           .permitAll()
           .loginProcessingUrl(LOGIN_PROCESSING_URL)
           .failureUrl(LOGIN_FAILURE_URL)
-          .successHandler(new AuthenticationSuccessHandler())
+          .successHandler(new SavedRequestAwareAuthenticationSuccessHandler())
           .and()
           .logout()
           .logoutSuccessUrl(LOGOUT_SUCCESS_URL)

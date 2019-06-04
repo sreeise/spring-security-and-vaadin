@@ -23,7 +23,7 @@ public class AppMenu {
           new AppLayoutMenuItem(VaadinIcon.USER.create(), "Profile", "profile"),
           new AppLayoutMenuItem(VaadinIcon.CHEVRON_RIGHT.create(), "Logout", "logout"));
 
-    Optional<String> userEmail = SecurityAccess.getEmailFromProperty();
+    Optional<String> userEmail = SecurityAccess.getEmail();
     userEmail.ifPresent(s -> menu.addMenuItem(new Label(s)));
 
     return appLayout;
