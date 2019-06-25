@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sreeise/spring-security-and-vaadin.svg?branch=master)](https://travis-ci.org/sreeise/spring-security-and-vaadin)
+
 # Spring Security Login with Vaadin UI Example
 
 Integrates a Vaadin UI i18n login form with Spring Security. Passwords
