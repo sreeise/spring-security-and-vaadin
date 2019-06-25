@@ -46,12 +46,20 @@ dependencies {
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
+	testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.1.5.RELEASE'
+	testImplementation('org.junit.jupiter:junit-jupiter:5.4.2')
+	testCompile "com.h2database:h2"
 }
 
 dependencyManagement {
 	imports {
 		mavenBom "com.vaadin:vaadin-bom:${vaadinVersion}"
+	}
+}
+
+test {
+	useJUnitPlatform() {
+		includeEngines 'junit-jupiter'
+		excludeEngines 'junit-vintage'
 	}
 }
